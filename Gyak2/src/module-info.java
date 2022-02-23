@@ -1,0 +1,2 @@
+module JavaProgGyak2 {
+}
