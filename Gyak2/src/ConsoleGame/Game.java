@@ -5,8 +5,9 @@ public class Game {
 	private static boolean success;
 	
 	public static void main(String[] args) {
-		int rndNum=con.randomNumber();
 		con.inform();
+		con.readLimit();
+		int rndNum=con.randomNumber();
 		while(!success) {
 			String tippS=con.readTip();
 			if(con.check(tippS)) {

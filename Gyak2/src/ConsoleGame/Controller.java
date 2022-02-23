@@ -20,6 +20,19 @@ public class Controller {
 		return randInt;
 	}
 	
+	public  void readLimit() {
+		System.out.println("Kérem a limitet: ");
+		
+		String lim = sc.nextLine();
+		if(check(lim)==true) {
+			limit=StoInt(lim);
+			max=limit;
+		}else {
+			readLimit();
+		}
+		
+	}
+	
 	public  String readTip() {
 		System.out.println("Kérem a tippedet: ");
 		
@@ -27,9 +40,11 @@ public class Controller {
 		return tip;
 	}
 	
+	
 	public int dbplus() {
 		return db++;
 	}
+	
 	public  boolean check(String s) {
 		boolean out = true;
 		
@@ -79,7 +94,7 @@ public class Controller {
 			mS="A szám nagyobb a tippednél!";
 			if(tipp>=min)min=tipp;
 		}
-		if(tipp >max)mS="A tippelt szám nagyobb, mint a már simerhetõ legnagyobb érték!";
+		if(tipp >max)mS="A tippelt szám nagyobb, mint a már ismerhetõ legnagyobb érték!";
 		if(tipp<min)mS="A tippelt szám kisebb, mint a már ismerhetõ legkiseb érték!";
 		if(tipp<0)mS="A tippelt szám kisebb, mint az alsó határ!";
 		if(tipp>limit)mS="A tippelt szám nagyobb, mint a felsõ határ!";
@@ -88,7 +103,7 @@ public class Controller {
 	}
 	
 	public void inform() {
-		System.out.println("A program generál egy számot 0 és "+limit+" között, ezt kell kitalálni!");
+		System.out.println("A program generál egy számot 0 és a megadott limit között, ezt kell kitalálni!");
 		System.out.println("Tippelj és kapsz egy eredményt róla!");
 	}
 }
